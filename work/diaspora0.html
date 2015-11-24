@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>随机飞散</title>
+<link href="../images/favicon.ico" rel="shortcut icon"  /> 
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style>
+body{ overflow:hidden;}
+#div1 {width:600px; height:600px; position:absolute; left:50%; top:50%; margin-left:-300px; margin-top:-300px;}
+#ul1{ width:330px; margin:100px auto;}
+#ul1 li{ width:90px; height:90px; margin:10px; float:left; background:#ccc; text-align:center; line-height:100px; font-size:20px; color:#f00;}
+#btn1 {width:100px; height:33px; text-align:center; line-height:33px; color:#3CF; font-size:16px; font-weight:bold; cursor:pointer; position:absolute; left:50%; bottom:0; margin-left:-50px;}
+ul li img{vertical-align: inherit;}
+</style>
+
+</head>
+
+<body>
+
+<div id="div1">
+<ul id="ul1">
+	<li><img src="../images/work/img0/1.jpg"></li>
+    <li><img src="../images/work/img0/2.jpg"></li>
+    <li><img src="../images/work/img0/3.jpg"></li>
+    <li><img src="../images/work/img0/4.jpg"></li>
+    <li><img src="../images/work/img0/5.jpg"></li>
+    <li><img src="../images/work/img0/6.jpg"></li>
+    <li><img src="../images/work/img0/7.jpg"></li>
+    <li><img src="../images/work/img0/8.jpg"></li>
+    <li><img src="../images/work/img0/9.jpg"></li>
+</ul>
+<span id="btn1">~点我试试~</span>
+</div>
+<script src="../js/move.js"></script>
+<script>
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n+1)+n);	
+}
+window.onload=function(){
+	var oBtn=document.getElementById('btn1');
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	var bReady = false;
+	
+	var aPos=[];
+	for(var i=0; i<aLi.length; i++){
+		aPos[i]={left:aLi[i].offsetLeft, top:aLi[i].offsetTop};
+	}
+	
+	for(var i=0; i<aLi.length; i++){
+		aLi[i].style.left=aPos[i].left+'px';
+		aLi[i].style.top=aPos[i].top+'px';
+		aLi[i].style.position='absolute';
+		aLi[i].style.margin=0;
+	}
+	
+	var timer=null;
+	var iLeft = 0;
+	var iTop = 0;
+	var iRnd = 0;
+	oBtn.onclick=function(){
+		if(bReady)return;
+		bReady = true;
+		var i=0;
+		
+		timer=setInterval(function(){
+			bReady = true;
+			iRnd = rnd(1,4);
+			
+			switch(iRnd){
+				case 1 :
+					iLeft = rnd(0,600);
+					iTop = 0;
+					break;
+				case 2 :
+					iLeft = 600;
+					iTop = rnd(0,600);
+					break;
+				case 3 :
+					iLeft = rnd(0,600);
+					iTop = 600;
+					break;
+				case 4 :
+					iLeft = 0;
+					iTop = rnd(0,600);
+					break;
+			}
+			
+			(function(index){
+				move(aLi[i],{width:0,height:0, opacity:0, left:iLeft, top:iTop},{fn:function(){
+					if(index==aLi.length-1){
+						
+						
+						i=aLi.length-1;
+						
+						timer=setInterval(function(){
+							move(aLi[i],{width:90, height:90, opacity:1,left:aPos[i].left,top:aPos[i].top});
+							i--;
+							if(i==-1){
+								clearInterval(timer);
+								bReady = false;	
+							}
+						},100);
+					}	
+				}});
+			})(i);
+			
+			i++;
+			if(i==aLi.length){
+				clearInterval(timer);	
+			}
+		},100);
+	};
+};
+</script>
+</body>
+</html>

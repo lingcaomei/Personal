@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>随机飞散</title>
+<link href="../images/favicon.ico" rel="shortcut icon"  /> 
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style>
+body{ overflow:hidden;background: #f1f1f1;}
+#div1 {width:600px; height:600px; position:absolute; left:50%; top:50%; margin-left:-300px; margin-top:-300px;}
+#ul1{ width:330px; margin:100px auto;}
+#ul1 li{ width:90px; height:90px; margin:10px; float:left; background:#ccc; text-align:center; line-height:100px; font-size:20px; color:#f00;}
+#btn1 {width:100px; height:33px; text-align:center; line-height:33px; color:#3CF; font-size:16px; font-weight:bold; cursor:pointer; position:absolute; left:50%; bottom:0; margin-left:-50px;}
+ul li img{vertical-align: inherit;box-shadow: 0 1px 5px rgba(0,0,0,0.06);}
+</style>
+
+</head>
+
+<body>
+
+<div id="div1">
+	<ul id="ul1">
+		<li><img src="../images/work/img0/1.jpg"></li>
+	    <li><img src="../images/work/img0/2.jpg"></li>
+	    <li><img src="../images/work/img0/3.jpg"></li>
+	    <li><img src="../images/work/img0/4.jpg"></li>
+	    <li><img src="../images/work/img0/5.jpg"></li>
+	    <li><img src="../images/work/img0/6.jpg"></li>
+	    <li><img src="../images/work/img0/7.jpg"></li>
+	    <li><img src="../images/work/img0/8.jpg"></li>
+	    <li><img src="../images/work/img0/9.jpg"></li>
+	</ul>
+	<span id="btn1">~点我试试~</span>
+</div>
+<script src="../js/move.js"></script>
+<script>
+
+function Diaspora (){
+	this.oDiv1=document.getElementById('div1');
+	this.oBtn=this.oDiv1.children[1];
+	this.oUl=this.oDiv1.children[0];
+	this.aLi=this.oUl.children;
+	this.bReady = false;
+	this.aPos=[];
+
+	this.setPos();
+	
+	this.timer=null;
+	this.iLeft = 0;
+	this.iTop = 0;
+	this.iRnd = 0;
+
+	this.init();
+};
+
+Diaspora.prototype.click=function(){
+	if(this.bReady)return;
+	this.bReady = true;
+	var i=0;
+	var _this=this;
+	this.timer=setInterval(function(){
+		_this.bReady = true;
+		_this.iRnd = rnd(1,4);
+		
+		switch(_this.iRnd){
+			case 1 :
+				_this.iLeft = rnd(0,600);
+				_this.iTop = 0;
+				break;
+			case 2 :
+				_this.iLeft = 600;
+				_this.iTop = rnd(0,600);
+				break;
+			case 3 :
+				_this.iLeft = rnd(0,600);
+				_this.iTop = 600;
+				break;
+			case 4 :
+				_this.iLeft = 0;
+				_this.iTop = rnd(0,600);
+				break;
+		}
+		_this.pmove(i);
+		
+		i++;
+		if(i==_this.aLi.length){
+			clearInterval(_this.timer);	
+		}
+	},100);
+};
+
+Diaspora.prototype.pmove=function (i){
+	var _this=this;
+	(function(index){
+		move(_this.aLi[i],{width:0,height:0, opacity:0, left:_this.iLeft, top:_this.iTop},{fn:function(){
+			if(index==_this.aLi.length-1){
+				
+				
+				i=_this.aLi.length-1;
+				
+				_this.timer=setInterval(function(){
+					move(_this.aLi[i],{width:90, height:90, opacity:1,left:_this.aPos[i].left,top:_this.aPos[i].top});
+					i--;
+					if(i==-1){
+						clearInterval(_this.timer);
+						_this.bReady = false;	
+					}
+				},100);
+			}	
+		}});
+	})(i);
+}
+Diaspora.prototype.setPos=function(){
+ 	for(var i=0; i<this.aLi.length; i++){
+		this.aPos[i]={left:this.aLi[i].offsetLeft, top:this.aLi[i].offsetTop};
+	}
+	
+	for(var i=0; i<this.aLi.length; i++){
+		this.aLi[i].style.left=this.aPos[i].left+'px';
+		this.aLi[i].style.top=this.aPos[i].top+'px';
+		this.aLi[i].style.position='absolute';
+		this.aLi[i].style.margin=0;
+	}
+}
+
+Diaspora.prototype.init=function(){
+ 	var _this=this;
+	this.oBtn.onclick=function(){
+		_this.click();
+	}
+}
+
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n+1)+n);	
+}
+
+
+window.onload=function(){
+	new Diaspora('div1')
+}
+
+</script>
+</body>
+</html>

@@ -1,48 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" >
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" >
-    <!-- apple-->
-    <meta name="apple-mobile-web-app-capable" content="yes" >
-    <meta name="apple-touch-fullscreen" content="yes" >
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" >
-    <meta name="apple-mobile-web-app-title" content="鹏金所">
-    <!-- x5 -->
-    <meta name="x5-orientation" content="portrait">
-    <meta name="x5-page-mode" content="app">
-    
-    <!-- uc -->
-    <meta name="screen-orientation" content="portrait">
-    <meta name="browsermode" content="application">
-
-
-    <link href="/favicon.ico" type="image/x-icon" rel="icon">
-    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
-   
-    <title>鹏金所</title>
-
-    <style type="text/css">
-		*{padding: 0;margin: 0;font-family: "微软雅黑";}
-		.error{max-width: 720px;margin: 0 auto;}
-		.error-pic{width: 100%;text-align: center;padding-top: 45px;}
-		.error-pic img{width: 80%;}
-		.error-tip{padding-top: 20px;}
-		.error-tip .tip{font-size: 18px;color: #656565;line-height: 30px;text-align: center;
-		}
-		.back-btn{width: 100%;line-height: 34px;text-align: center;padding-top: 22px;}
-		.back-btn a{display: inline-block;width: 40%;height: 100%;font-size: 14px;color: white;text-align: center;background: #029eea;text-decoration: none;}
-		.back-btn a:hover{background: #0197E0;}
-    </style>
+	<meta charset="UTF-8">
+	<title>陈少梅个人网站</title>
+	<link href="images/favicon.ico" rel="shortcut icon"  /> 
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
 </head>
 <body>
-	<article class="error">
-		<div class="error-pic"><img src="images/404.png" alt=""></div>
-		<div class="error-tip">
-			<p class="tip">哎呀...您访问的页面不存在</p>
+	<article class="wrap" id="wrap">
+		<div class="loading" id="load"><img src="images/loading.GIF" alt=""></div>
+		<!-- 初始动画 -->
+		<div class="init_animate" id="init_animate">
+			<div class="case_wrap" id="case_wrap">
+				<ol class="caseMenu" id="case">
+					<li  style="width: 481px; z-index: 5; left: 0px;   background: url(images/init/li1.png) no-repeat;"></li>
+				    <li  style="width: 503px; z-index: 4; left: 299px;  background: url(images/init/li2.png) no-repeat;"></li>
+				    <li  style="width: 443px; z-index: 3; left: 741px;  background: url(images/init/li3.png) no-repeat;"></li>
+				    <li  style="width: 501px; z-index: 2; left: 1120px; background: url(images/init/li4.png) no-repeat;"></li>
+				    <li  style="width: 476px; z-index: 1; left: 1444px;  background: url(images/init/li5.png) no-repeat;"></li>
+				</ol>
+				<h2 id="title">“您看到的不只是一个网站”</h2>
+				<div id="dax" class="dax"></div>
+			</div>
 		</div>
-		<div class="back-btn"><a href="#">返回首页</a></div>
-
+		<!-- 导航 -->
+		<nav>
+			<div class="inner">
+				<div class="logo"><img src="images/logo.png" alt=""></div>
+				<div>
+					<ul id="nav_ul">
+						<li class="active"><a href="javascript:;">首页</a></li>
+						<li><a href="javascript:;">技能</a></li>
+						<li><a href="javascript:;">展示</a></li>
+						<li><a href="javascript:;">项目</a></li>
+						<li><a href="javascript:;">联系我</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- 内容 -->
+		<div class="content" id="content">
+			<!-- 模块1 -->
+			<section class="sec sec1" id="sec1">
+				<div class="sec1_bg1"></div>
+				<div class="sec1_bg2"></div>
+				<div class="sec1_bg3"></div>
+				<div class="flower_1 move_obj" style="z-index:4;"></div>
+				<div class="flower_2 move_obj" style="z-index:3;"></div>
+				<div class="bird_change move_obj" style="z-index:3;" id="bird"></div>
+				<div class="pebble move_obj" style="z-index:6;"></div>
+				<div class="stone move_obj" style="z-index:4;"></div>
+				<div class="draw">
+					<div class="draw_in">
+						<div class="scenery">
+							<div class="scenery_bg">
+								<img class="shan" src="images/shan_bg.png" alt="">
+								<div class="bird_1">
+                    				<div class="bird1 bird1_blue"></div> 
+                    			</div>
+                    			<div class="bird_2">
+                    				<div class="bird2 bird2_blue"></div> 
+                    			</div>
+                    			<div class="bird_3">
+                    				<div class="bird3 bird3_blue"></div> 
+                    			</div>
+								<div class="bird_4">
+                    				<div class="bird3 bird3_blue"></div> 
+                    			</div>
+                    			<img class="cloud preload" src="images/cloud.png">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="feather" id="feather">
+					
+				</div>
+			</section>
+			<!-- 模块2 -->
+			<section class="sec sec2">
+				<div class="inner">
+					<div class="outside" id="outside"></div>
+					<div class="round" id="round">
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/js.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/css.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/html.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/html5.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/css3.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/ajax.png" alt="">
+						</span>
+						<span>
+							<img class="img1" src="images/test.png" alt="">
+							<img src="images/jquery.png" alt="">
+						</span>
+					</div>
+					<div class="til">
+						<h3 class="til_en">My skills</h3>
+						<h2 class="til_zw">我的技能</h2>
+					</div>
+					<div class="inside" id="inside"></div>
+				</div>
+			</section>
+			<!-- 模块3 -->
+			<section class="sec sec3">
+				<h3><img src="images/sec3_til.png" alt=""></h3>
+				<div class="work1_wrap" id="box">
+					<div class="work_list1">
+						<ul class="list1_ul" id="list1_ul">
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img1.png" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="work/photoWall.html" target="_blank">
+									<div class="li_img"><img src="images/sec/sec3_img2.png" alt=""></div>
+									<div class="li_txt">
+										<h6>照片墙</h6>
+										<span>时间：2015-07-12</span>
+										<span>技术：html、css、js</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="work/pubuliu.html" target="_blank">
+									<div class="li_img"><img src="images/sec/sec3_img3.png" alt=""></div>
+									<div class="li_txt">
+										<h6>jsonp瀑布流</h6>
+										<span>时间：2015-07-12</span>
+										<span>技术：html、css、js、jsonp</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="work/photos.html" target="_blank">
+									<div class="li_img"><img src="images/sec/sec3_img4.png" alt=""></div>
+									<div class="li_txt">
+										<h6>相册</h6>
+										<span>时间：2015-08-06</span>
+										<span>技术：html、css、js</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="work/diaspora.html" target="_blank">
+									<div class="li_img"><img src="images/sec/sec3_img5.png" alt=""></div>
+									<div class="li_txt">
+										<h6>飞散消失效果</h6>
+										<span>时间：2015-09-08</span>
+										<span>技术：js、html、css</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img6.gif" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：2015-7-12</span>
+										<span>技术：html、css、js</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img7.jpg" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img8.jpg" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img9.jpg" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img10.jpg" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="li_img"><img src="images/sec/sec3_img11.jpg" alt=""></div>
+									<div class="li_txt">
+										<h6>更新中</h6>
+										<span>时间：无</span>
+										<span>技术：无</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- <div class="sec3_btns" id="sec3_btns">
+							<a class="prev" href="javascrip:;"><img src="images/prev.png" alt=""></a>
+							<a class="next" href="javascrip:;"><img src="images/next.png" alt=""></a>
+						</div> -->
+					</div>
+					<div class="scrollbar" id="hdt">
+						<span class="scrollbox" id="hk"></span>
+					</div>
+				</div>
+			</section>
+			<!-- 模块4 -->
+			<section class="sec sec4">
+				<div class="sec4_til">
+					<h3></h3>
+					<p></p>
+				</div>
+				<div class="inner">
+					<ul class="work2_ul" id="work2_ul">
+						<li>
+							<a href="http://www.taoping.cn/" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img1.png" alt=""></div>
+								<div class="mask">淘屏网</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.chinacnit.com" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img2.png" alt=""></div>
+								<div class="mask">集团官网</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://cmt.cnitcloud.com/new/meeting/meetingRoomController/roomList?userId=22" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img3.png" alt=""></div>
+								<div class="mask">淘会微信</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.pubds.com/" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img4.png" alt=""></div>
+								<div class="mask">云发网</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.biznest.cn/" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img5.png" alt=""></div>
+								<div class="mask">云管端</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://onlineedu.cnitcloud.com/">
+								<div class="sec4_img"><img src="images/sec/sec4_music.png" alt=""></div>
+								<div class="mask">天禾玄音乐</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://jyydt.cnitcloud.com/">
+								<div class="sec4_img"><img src="images/sec/sec4_img6.png" alt=""></div>
+								<div class="mask">一点通微信</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.cnitcloud.com" target="_blank">
+								<div class="sec4_img"><img src="images/sec/sec4_img7.png" alt=""></div>
+								<div class="mask">云巢盾</div>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+			</section>
+			<!-- 模块5 -->
+			<section class="sec sec5">
+				<div class="bg_cover"></div>
+				<div class="inner">
+					<div class="sec5_content">
+						<div class="sec5_txt">
+							<div id="txts"></div>
+						</div>
+						<div class="infos">
+							<p>姓名：陈少梅</p>
+							<p>手机：13510424330</p>
+							<p>邮箱：<a href="mailto:csm821858141@163.com">csm821858141@163.com</a></p>
+							<p>QQ：821858141</p>
+							<p>住址：深圳市宝安区坪洲</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</article>
+	
+	<!-- js文件 -->
+	<script type="text/javascript" src="js/move.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oLoad=document.getElementById('load');
+			oLoad.parentNode.removeChild(oLoad);
+			loadAnimate();
+			first();
+		}
+	</script>
+	<!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
 </body>
 </html>

@@ -1,0 +1,138 @@
+
+.loading{position: absolute;top: 50%;left: 50%;margin: -25px;width: 50px;height: 50px;z-index: 20000;}
+/*首屏初始动画*/
+.init_animate{ width: 100%; height: 697px; overflow: hidden; position: absolute; z-index: 100; }
+.init_animate h2{ font-family: "微软雅黑"; font-size: 50px; color: white; position: absolute; top: -100px; left: 50%; margin-left:-300px; text-shadow:4px 4px 2px #3c78b7; z-index: 100; }
+.init_animate ol{ list-style: none; width: 1920px; height: 697px; position: absolute; top:0; left: 50%; margin-left: -960px; overflow: hidden; }
+.init_animate ol li{ float: left; position: absolute; top: 0px; opacity: 0; height: 0px; }
+.init_animate .dax{ width: 266px; height:222px; background: url(../images/init/elephantAnimate.png) no-repeat 0 0; position: absolute; top:200px; left: 50%; margin-left: -133px; z-index: 100; opacity: 0}
+
+
+/*导航*/
+html,body{ position: relative; width: 100%; height: 100%; overflow: hidden; }
+nav{ width: 100%; min-width: 1200px; background: rgba(0, 0, 0, 0.75); height: 50px; line-height: 50px; position:fixed; top:0; left: 0; right: 0; z-index: 10000; }
+nav .logo{ float: left; }
+nav ul{ float: right; }
+nav ul li{ float: left; padding: 0 30px; }
+nav ul li a{ color: #BDBDBD; position: relative; transition:all 1s ease-out;-webkit-transition:all 1s ease-out;-moz-transition:all 1s ease-out;-ms-transition:all 1s ease-out; }
+nav ul li:hover a{ top: 5px; color: #fff; }
+nav ul li.active a{ top:5px; color: white; }
+
+/*模块*/
+.content{ position: absolute; top: 0; left: 0; right: 0; height: 100%; }
+.sec{ position: relative; width: 100%; height: 100%; min-width: 1200px; overflow: hidden; }
+.sec1{ background: white; opacity: 0; }
+.sec1_bg1{ width: 1201px; height: 750px; position: absolute; left: 50%; top: -30px; margin-left: -1210px; background-image: url(../images/sec1_bg1.gif); background-repeat: no-repeat; overflow: hidden; z-index: 3; }
+.sec1_bg2{ width: 508px; height: 470px; position: absolute; left: 43%; top: 145px; margin-left: -360px; background-image: url(../images/sec1_bg2.gif); background-repeat: no-repeat; overflow: hidden; z-index: 2; }
+.sec1_bg3{ width: 800px; height: 1310px; position: absolute; left: 50%; top: -30px; margin-left: 480px; background-image: url(../images/sec1_bg3.gif); background-repeat: no-repeat; overflow: hidden; z-index: 3; }
+.flower_1{ width: 183px; height: 209px; position: absolute; left: 50%; top: 294px; margin-left: 490px; background-image: url(../images/flower_1.png); background-repeat: no-repeat; overflow: hidden; z-index: 27; }
+.flower_2{ width: 105px; height: 104px; position: absolute; left: 50%; top: 274px; margin-left: 335px; background-image: url(../images/flower_2.png); background-repeat: no-repeat; overflow: hidden; z-index: 27; }
+.pebble{ width: 103px; height: 97px; position: absolute; left: 45%; top: 395px; margin-left: -51px; background-image: url(../images/pebble.png); background-repeat: no-repeat; overflow: hidden; z-index: 6; }
+.bird_change{ width: 100px; height: 140px; position: absolute; left: 50%; top:120px; margin-left: -50px; background-image: url(../images/bird_change.png); background-repeat: no-repeat; background-position: 0 -140px; overflow: hidden; }
+.stone{ width: 294px; height: 188px; position: absolute; left: 40%; top: 620px; margin-left: -100px; background-image: url(../images/stone.png); background-repeat: no-repeat; overflow: hidden; z-index: 26; }
+.draw{ width: 520px; height: 520px; position: relative; left: 50%; top: 240px; background-image: url(../images/pic_white.png); background-repeat: no-repeat; z-index: 1; }
+.draw_in{ margin: 0; padding: 0; position: absolute; overflow: hidden; width: 480px; height: 480px; }
+.scenery{ position: absolute; left: 70px; top: 70px; width: 340px; height: 340px; background: rgba(204, 204, 204, 0.52); transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg);overflow: hidden; }
+.scenery_bg{ width: 870px; height: 496px; position: absolute; left: 0px; top: 0px; left: -70px; top: 130px; -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); }
+.scenery_bg img{ position: absolute; left: -90px; }
+
+/*鸟儿样式动画*/
+.bird{ left: 0; }
+.bird1 { width:26px; height:23px; }
+.bird2 { width:25px; height:24px; }
+.bird3 { width:30px; height:25px; }
+
+.bird1_blue { background:url(../images/bird1-blue.png); -webkit-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;-moz-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite; -ms-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;}
+.bird2_blue { background:url(../images/bird2-blue.png); -webkit-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;-moz-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite; -ms-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;}
+.bird3_blue { background:url(../images/bird3-blue.png); -webkit-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;-moz-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite; -ms-animation:bird .8s steps(5) infinite; animation:bird .8s steps(5) infinite;}
+
+.bird_1 { width:26px; height:23px; top:120px; position:absolute; z-index:3; animation:bird_move_1 8s linear none infinite; -webkit-animation:bird_move_1 8s linear none infinite; -moz-animation:bird_move_1 8s linear none infinite;-ms-animation:bird_move_1 8s linear none infinite;}
+.bird_2 { width:25px; left:-50px; height:24px; top:155px; position:absolute; z-index:3; animation:bird_move_1 8.5s linear none infinite; -webkit-animation:bird_move_1 8.5s linear none infinite;-moz-animation:bird_move_1 8.5s linear none infinite; -ms-animation:bird_move_1 8.5s linear none infinite;}
+.bird_3 { width:30px; left:-20px; height:25px; top:160px; position:absolute; z-index:3; animation:bird_move_1 9s linear none infinite; -webkit-animation:bird_move_1 9s linear none infinite;-moz-animation:bird_move_1 9s linear none infinite; -ms-animation:bird_move_1 9s linear none infinite;}
+.bird_4 { width:30px; left:-50px; height:25px; top:188px; position:absolute; z-index:3; animation:bird_move_1 6.8s linear none infinite; -webkit-animation:bird_move_1 6.8s linear none infinite;-moz-animation:bird_move_1 6.8s linear none infinite; -ms-animation:bird_move_1 6.8s linear none infinite;}
+
+.scenery_bg .shan{ animation:shan_move 40s linear none infinite; -webkit-animation:shan_move 40s linear none infinite;-moz-animation:shan_move 40s linear none infinite; -ms-animation:shan_move 40s linear none infinite;}
+.scenery_bg .cloud { position:absolute; left:0px; top:60px; animation:bird_move2 40s linear none infinite; -webkit-animation:bird_move2 40s linear none infinite; opacity: 0.5;-moz-animation:bird_move2 40s linear none infinite; opacity: 0.5;-ms-animation:bird_move2 40s linear none infinite; opacity: 0.5; }
+
+/*羽毛飘落*/
+.feather{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; }
+.feather span{ position: absolute; top: -100px; display: block; }
+
+
+/*第二屏..............................*/
+.sec2{ background: #ff6866; }
+.sec2 .inner{ position: relative; margin-top: 30px; }
+.outside{ width: 560px; height: 560px;border-radius: 50%; position: absolute; left: 50%; top: 100px; margin-left: -280px; }
+.outside span{ display: block; width: 10px; height: 10px; border-radius: 50%; position: absolute; left: 50%; margin: -5px; background: white; }
+.round{ width: 440px; height: 440px; border: 1px solid #fff; border-radius: 50%;position: absolute; left: 50%; top: 100px; margin-left: -220px; margin-top: 60px; }
+.round span{ display: block; width: 76px; height: 76px; background: white; border-radius: 50%; position: absolute; left: 50%; margin: -38px; text-align: center; }
+.round span img{ position: absolute; top:0; left: 0; }
+.round span .img1{position: absolute; top:0; left: 0; z-index: 1000; width: 0; height: 0; -ms-transition:all 400ms ease-out;-moz-transition:all 400ms ease-out;-webkit-transition:all 400ms ease-out;transition:all 400ms ease-out; border-radius: 100px; top:50%; left:50%; }
+.round span:hover .img1{ width: 126px; height: 126px; top:-25px; left: -25px; max-width: 1000px; }
+
+.sec2 .til{ position: absolute; width: 206px; height: 99px; top: 323px; left: 50%; margin-left: -99px; text-align: center; }
+.sec2 .til h2,.sec2 .til h3{ text-indent: -9999em; }
+.sec2 .til h3{ width: 148px; height: 42px; background: url(../images/my-skills.png) no-repeat center center; margin-left: 29px; }
+.sec2 .til h2{ width: 206px; height: 57px; background: url(../images/skill_til.png) no-repeat center center; }
+
+.inside{ width: 320px; height: 320px;border-radius: 50%; position: absolute; left: 50%; top: 218px; margin-left: -160px; }
+.inside span{ height: 15px; width: 1px; background: white; display: block; position: absolute; bottom:10px; -webkit-transform-origin:center 0px;-moz-transform-origin:center 0px;opacity: 0.3; -ms-transform-origin:center 0px;opacity: 0.3;}
+
+
+
+/*第三屏...............................*/
+.sec3{ background: #f2f2f2; }
+.sec3 h3{ padding-left: 100px; padding-top: 150px; }
+.work1_wrap{ position: relative; margin-top: 50px; }
+.work_list1{ width: 100%; height: 386px; position: relative; overflow: hidden; box-shadow: 1px 0 10px rgba(217, 217, 217, 0.85); }
+.work_list1 .list1_ul{ width:4000px; position: absolute; left: 0; top: 0; }
+
+.work_list1 .list1_ul li{ float: left; width: 351px; background: white; -webkit-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -moz-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -o-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); }
+.work_list1 .list1_ul li a{ display: block; border-right: 1px solid #e5e5e5; }
+.work_list1 .list1_ul li a .li_img{ padding:32px 32px 20px; }
+.work_list1 .list1_ul li a .li_txt{ padding: 0 32px 74px; color: #3c3c3c; }
+.work_list1 .list1_ul li a .li_txt h6{ font-size: 18px; line-height: 40px; font-weight: 500; -webkit-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -moz-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -o-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); }
+.work_list1 .list1_ul li a .li_txt span{ display: block; font-size: 12px; line-height:20px; color: #aaa; -webkit-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -moz-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); -o-transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); transition: background 0.3s cubic-bezier(0.47, 0, 0.745, 0.715); }
+.work_list1 .list1_ul li:hover{ background: #aaa; }
+.work_list1 .list1_ul li:hover .li_txt h6{ color:#fff; }
+.work_list1 .list1_ul li:hover .li_txt span{ color:#fff; }
+
+.scrollbar{ width: 100%; height: 14px; position: relative; background: #ededed; }
+.scrollbox{ display: block; width: 520px; height: 14px; background:  #DFDFDF; position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; }
+/*.sec3_btns{ display: none; }
+.sec3_btns a{ position: absolute; top:50%; margin-top: -25px; width: 50px; height: 50px; cursor: pointer; overflow: hidden; background: rgba(0,0,0,0.5); border-radius: 50%; text-align: center; line-height: 50px; -webkit-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; }
+.sec3_btns .prev{ left: 60px; }
+.sec3_btns .next{ right: 60px; }
+.sec3_btns a:hover{ -webkit-animation: ue-pudding 1s linear; -moz-animation: ue-pudding 1s linear; animation: ue-pudding 1s linear; background: #41b1e7; }
+*/
+/*第四屏...............................*/
+.sec4{ background: #212325; }
+.sec4 .sec4_til{ padding-top: 50px; }
+.sec4 .sec4_til h3{ width: 156px; height: 38px; background: url(../images/sec4_til.png) no-repeat center top; margin: 0 auto; margin-top: 100px; }
+.sec4 .sec4_til p{ width: 390px; height: 14px; background: url(../images/sec4_p.png) no-repeat center top; margin: 30px auto 65px; }
+.sec4 .work2_ul li{ float: left; width: 285px; height:180px; margin-right: 20px; margin-bottom:20px; position: relative; overflow: hidden; }
+.sec4 .work2_ul li:nth-child(4n){ margin-right: 0; }
+.sec4 .work2_ul li .sec4_img{ width: 100%; }
+.sec4 .work2_ul li .mask{ width:100%; height:100%; position: absolute; top: 0; left: -285px; background: rgba(255, 104, 102, 0.93); font-family: '微软雅黑'; font-size: 26px; text-align: center; line-height: 180px; color: white; }
+
+
+/*第五屏...............................*/
+.sec5{ background: #ffd200; background: url(../images/personal_bg.jpg) no-repeat center top; background-size: 100%; }
+.bg_cover{ position: absolute; top:0; top:0; width: 100%; height: 100%; background: url(../images/bg_cover1.png) repeat; z-index: 1; }
+.sec5 .sec5_content{ width: 800px; margin: 90px auto 0; padding-top: 150px; }
+.sec5 .sec5_til{ width: 100%; position: relative; z-index: 100}
+.sec5 .sec5_til h3{ font-size: 40px; color: white; text-shadow: 2px 2px 2px rgba(68,0,25,.2); font-weight: 300; text-align: center; padding-bottom: 20px; }
+.sec5 .sec5_til p{ font-size: 18px; font-weight: 500; text-align: center; line-height: 32px; color: white; }
+.sec5_txt{ float:left; width: 430px; height: 430px; border-radius: 50%; position: relative; z-index: 1000; background: rgba(0, 0, 0, 0.52); }
+.sec5_txt div{ padding: 27px; color: white; text-align: center; font-size: 20px; line-height: 42px; border-radius: 500px; padding-top: 130px; }
+.sec5_txt div span{ opacity: 0; }
+
+.infos{ float: left; position: relative; z-index: 1000;padding-top: 60px; }
+.infos p{ font-size: 18px; color: white; line-height: 60px; }
+.infos p a{ font-size: 18px; color: white; line-height: 60px; }
+
+.infos p:nth-child(1){ padding-left: 30px; }
+.infos p:nth-child(2){ padding-left: 70px; }
+.infos p:nth-child(3){ padding-left: 90px; }
+.infos p:nth-child(4){ padding-left: 70px; }
+.infos p:nth-child(5){ padding-left: 30px; }

@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>相册</title>
+<link href="../images/favicon.ico" rel="shortcut icon"  /> 
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+    body{ background: #f1f1f1; }
+    .imgListBox{width: 800px;height: 400px;margin: 100px auto 50px;position: relative;}
+    ul{list-style: none;position: relative;}
+    ul li{float: left;width: 200px;height: 130px;}
+    ul li img{width: 190px;height: 120px;box-shadow: 0 1px 5px rgba(0,0,0,0.06);}
+    
+    .page{position: absolute;right: -60px;}
+    .page a{display: block;text-align: center;line-height: 25px;text-decoration: none;box-shadow: 0 1px 3px rgba(0,0,0,0.06);}
+    .prev{width: 40px;height: 25px;background: white;display: block;margin-bottom: 30px;}
+    .next{width: 40px;height: 25px;background: white;display: block;}
+    .page a:hover{background: #e6e6e6; color: #6c6c6c; box-shadow: 0 1px 3px rgba(0,0,0,0.1);}
+</style>
+</head>
+
+<body>
+<div class="imgListBox" id="div1">
+	<ul class="list hidden">
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img1.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img2.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img3.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img4.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img5.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img6.gif" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img7.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img8.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img9.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img10.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img11.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img12.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec3_img13.jpg" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img1.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img2.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img3.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img4.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img5.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img6.png" alt="" /></a></li>
+    	<li><a href="javascript:;"><img src="../images/sec/sec4_img7.png" alt="" /></a></li>
+    </ul>
+    <div class="page" id="btns">
+    	<a href="javascript:;" class="prev">上</a>
+    	<a href="javascript:;" class="next">下</a>
+    	<span class="prev_ie6"></span>
+        <span class="next_ie6"></span>
+    </div>
+</div>
+<!-- js -->
+<script src="../js/move.js"></script>
+<script type="text/javascript">
+    window.onload=function(){
+        new Photos('div1');
+    }
+    var Photos=function(id){
+        this.oDiv1=document.getElementById(id);
+        this.aLi=this.oDiv1.getElementsByTagName('li');
+
+        this.oBtns=document.getElementById('btns');
+        this.oPrev=this.oBtns.children[0];
+        this.oNext=this.oBtns.children[1];
+
+        this.jsDom()
+        
+        this.ready=true;
+        this.now=0;
+
+        this.init();
+
+    }
+    Photos.prototype.prev=function(){
+        if(this.now==0)return;
+        if(!this.ready)return;
+        this.ready=false;
+        var i=this.now+8-1;
+        var _this=this;
+        var timer=setInterval(function(){
+            if(i<_this.now){
+                if(i==_this.now-4){
+                    move(_this.aLi[i],{'top':0,'opacity':1},{fn:function(){
+                        _this.ready=true;
+                    }})
+                }else{
+                    move(_this.aLi[i],{'top':0,'opacity':1})
+                }
+            }else if(i<_this.now+4){
+                move(_this.aLi[i],{'top':130,'opacity':1})
+            }else{
+                move(_this.aLi[i],{'top':260,'opacity':0})
+            }
+            i--;
+            if(i==_this.now-5){
+                _this.now-=4;
+                clearInterval(timer);
+            }
+        }, 30)   
+    
+    }
+    Photos.prototype.next=function(){
+        if(this.now>=this.aLi.length-8){
+            return;
+        }
+        if(!this.ready)return;
+        this.ready=false;
+
+        var i=this.now;
+        var _this=this;
+        var timer=setInterval(function(){
+            if(i<_this.now+4){
+                move(_this.aLi[i],{'top':-130,'opacity':0});
+            }else if(i<_this.now+8){
+                move(_this.aLi[i],{'top':0});
+
+            }else{
+                if(i==_this.now+11){
+                    move(_this.aLi[i],{'top':130,'opacity':1},{fn:function(){
+                        _this.ready=true;
+                    }});
+                }else{
+                   move(_this.aLi[i],{'top':130,'opacity':1}); 
+                }
+            }
+    
+            i++;
+            if(i==_this.now+12){
+                _this.now+=4;
+                clearInterval(timer);
+            }
+        }, 30);
+
+    }
+    Photos.prototype.jsDom=function (){
+        for (var i = 0; i < this.aLi.length; i++) {
+        this.aLi[i].style.left=this.aLi[i].offsetLeft+'px';
+        if(i>=12){
+            this.aLi[i].style.top=260+'px';
+        }else{
+            this.aLi[i].style.top=parseInt(i/4)*130+'px';
+        }
+        }
+        for (var i = 0; i < this.aLi.length; i++) {
+            this.aLi[i].style.position='absolute';
+        }
+        for (var i = 8; i < this.aLi.length; i++) {
+            this.aLi[i].style.opacity=0;
+        };
+    }
+    Photos.prototype.init=function(){
+        var _this=this;
+        this.oNext.onclick=function(){
+            _this.next();
+        };
+        this.oPrev.onclick=function(){
+            _this.prev();
+        }
+    }
+</script>
+</body>
+</html>

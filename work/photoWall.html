@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片墙</title>
+	<link href="../images/favicon.ico" rel="shortcut icon"  /> 
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<style type="text/css">
+		body{ background: #f1f1f1; }
+		.btn{ margin-top: 40px; }
+		.btn a{ display: block; font-size:18px; color: #000; margin-left: 150px; background: white; padding: 10px; width: 220px; text-align: center; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 4px; color: #999999; -webkit-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+		.btn a:hover{ background: #e6e6e6; color: #6c6c6c; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+		.photo_wall{ width: 900px; margin: 60px auto; }
+		.photo_wall ul li{ float: left; margin-right: 20px; margin-bottom: 20px; width: 280px; height: 180px; box-shadow: 0 1px 5px rgba(0,0,0,0.06); }
+		.photo_wall ul li:nth-child(3n){ margin-right: 0; }
+		.photo_wall ul li img{ width: 100%;     border: 6px solid rgba(241, 241, 241, 0);}
+		.photo_wall ul li.active img{border:6px solid #D62C6B;}
+	</style>
+
+</head>
+<body>
+	<div class="inner">
+		<div class="btn" id="btn">
+			<a  href="javascript:;">拖拽图片/点击 变换位置</a>
+		</div>
+		<div class="photo_wall" id="photo_wall">
+			<ul>
+				<li><img src="../images/sec/sec3_img1.png" alt=""></li>
+				<li><img src="../images/sec/sec3_img11.jpg" alt=""></li>
+				<li><img src="../images/sec/sec3_img3.png" alt=""></li>
+				<li><img src="../images/sec/sec3_img4.png" alt=""></li>
+				<li><img src="../images/sec/sec3_img5.png" alt=""></li>
+				<li><img src="../images/sec/sec3_img7.jpg" alt=""></li>
+				<li><img src="../images/sec/sec3_img8.jpg" alt=""></li>
+				<li><img src="../images/sec/sec3_img9.jpg" alt=""></li>
+				<li><img src="../images/sec/sec3_img10.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../js/move.js"></script>
+	<script type="text/javascript" src="../js/photoWall.js"></script>
+</body>
+</html>
