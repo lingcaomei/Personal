@@ -1,4 +1,4 @@
-//版权 北京智能社©, 保留所有权利
+
 //options url,data,success,timeout,error
 function jsonp(options){
 	
